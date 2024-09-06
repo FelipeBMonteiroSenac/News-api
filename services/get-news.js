@@ -1,9 +1,10 @@
-const API_KEY = "f1d6d1f59d2e4558aa6f8f1a925a6740";
-const url = 'https://newsapi.org/v2/everything?' +
-    'q=Compostagem&' +
-    'pageSize=20&' +
-    'sortBy=popularity&' +
-    'apiKey=' + API_KEY;
+const API_KEY = "3213fa424aef8719aed41a208721bbae";
+const topic = 'Compostagem '+'adubo ' 
+
+const url = 'http://api.mediastack.com/v1/news'+
+            '?access_key='+
+            API_KEY
+            '&keywords='+topic
 
 var req = new Request(url);
 
@@ -19,10 +20,10 @@ async function getData() {
 
 //cria cards na tela
         const Cards = document.getElementById('container')
-        console.log(json.articles)
+        console.log(json.data)
 
 //cria conteudo dos cards
-        json.articles.forEach(item => {
+        json.data.forEach(item => {
             const art = document.createElement('div');
 
                 const img = document.createElement('img');
