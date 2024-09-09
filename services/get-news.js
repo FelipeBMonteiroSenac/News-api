@@ -1,10 +1,10 @@
-const API_KEY = "3213fa424aef8719aed41a208721bbae";
-const topic = 'Compostagem '+'adubo ' 
+const API_KEY = "ae941e547f33d3688f2185888d539179";
+const topic = 'Compostagem' 
 
-const url = 'http://api.mediastack.com/v1/news'+
-            '?access_key='+
-            API_KEY
-            '&keywords='+topic
+const url = 'https://gnews.io/api/v4/search?q='+
+            topic+
+            '&apikey='+
+            API_KEY;
 
 var req = new Request(url);
 
@@ -20,10 +20,10 @@ async function getData() {
 
 //cria cards na tela
         const Cards = document.getElementById('container')
-        console.log(json.data)
+        console.log(json.articles)
 
 //cria conteudo dos cards
-        json.data.forEach(item => {
+        json.articles.forEach(item => {
             const art = document.createElement('div');
 
                 const img = document.createElement('img');
